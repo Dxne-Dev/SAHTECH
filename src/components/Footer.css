@@ -1,0 +1,50 @@
+.site-footer {
+  background: #0b1220;
+  color: #cfd8dc;
+  padding: 3rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.footer-brand p,
+.footer-info p,
+.footer-contact a {
+  color: #cbd5e1;
+}
+.footer-contact h4,
+.footer-info h4 {
+  margin-bottom: 0.85rem;
+  color: #fff;
+}
+.footer-contact a {
+  display: block;
+  margin-bottom: 0.55rem;
+  text-decoration: none;
+  color: #9fd5ff;
+  transition: color var(--transition-base);
+}
+.footer-contact a:hover {
+  color: var(--clr-primary);
+}
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  color: #8492a6;
+  font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

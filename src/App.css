@@ -1,0 +1,78 @@
+/* App.css – Loader Screen */
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--clr-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: loaderFadeOut 0.5s ease 1.8s forwards;
+}
+
+@keyframes loaderFadeOut {
+  to { opacity: 0; pointer-events: none; }
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loader-logo {
+  display: flex;
+  align-items: baseline;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.loader-s {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: loaderPulse 1s ease infinite alternate;
+}
+
+.loader-h {
+  color: rgba(108, 99, 255, 0.7);
+  animation: loaderPulse 1s ease 0.2s infinite alternate;
+}
+
+@keyframes loaderPulse {
+  from { opacity: 0.5; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.loader-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+}
+
+.loader-bar {
+  width: 160px;
+  height: 3px;
+  background: var(--clr-bg-2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.loader-fill {
+  height: 100%;
+  background: var(--grad-primary);
+  border-radius: var(--radius-full);
+  animation: loaderProgress 1.5s ease forwards;
+}
+
+@keyframes loaderProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}

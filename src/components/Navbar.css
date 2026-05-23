@@ -1,0 +1,198 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all var(--transition-base);
+}
+
+.navbar-scrolled {
+  padding: 12px 0;
+  background: rgba(5, 5, 8, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.navbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  display: flex;
+  align-items: baseline;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid var(--clr-border-hover);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-s {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-h {
+  color: var(--clr-secondary);
+  opacity: 0.8;
+  font-size: 1.2rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--clr-text);
+  line-height: 1.1;
+}
+
+.logo-tagline {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-left: auto;
+}
+
+.nav-link {
+  position: relative;
+  padding: 8px 14px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  transition: color var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--grad-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--clr-text);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 60%;
+}
+
+/* CTA */
+.navbar-cta {
+  flex-shrink: 0;
+  padding: 10px 22px;
+  font-size: var(--fs-xs);
+}
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  margin-left: auto;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.burger:hover { background: rgba(0,212,255,0.08); }
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--clr-text);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  transform-origin: center;
+}
+
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg) var(--space-md);
+  background: rgba(5, 5, 8, 0.95);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid var(--clr-border);
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-base);
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-link {
+  padding: 12px 0;
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  border-bottom: 1px solid var(--clr-border);
+  transition: color var(--transition-fast);
+}
+
+.mobile-link:hover { color: var(--clr-primary); }
+
+@media (max-width: 900px) {
+  .navbar-links, .navbar-cta { display: none; }
+  .burger { display: flex; }
+  .mobile-menu { display: flex; }
+}
