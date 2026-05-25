@@ -1,4 +1,5 @@
 import './Footer.css'
+import { contactDetails } from '../data/contactData'
 
 export default function Footer() {
   return (
@@ -11,17 +12,19 @@ export default function Footer() {
 
         <div className="footer-contact">
           <h4>Contact</h4>
-          <a href="tel:+229010000000">Tél : +229 01 XX XX XX XX</a>
-          <a href="mailto:contact@sahtech.dz">Email : contact@sahtech.dz</a>
+          <a href={`tel:${contactDetails.phoneHref}`}>Tél : {contactDetails.phone}</a>
+          <a href={`mailto:${contactDetails.email}`}>Email : {contactDetails.email}</a>
         </div>
 
         <div className="footer-info">
           <h4>Notre adresse</h4>
-          <p>Bénin, Cotonou</p>
-          <p>Saint Michel</p>
+          {contactDetails.address.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
           <h4>Horaires</h4>
-          <p>Lun – Sam : 8h – 20h</p>
-          <p>Urgences 24h/7j</p>
+          {contactDetails.hours.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
         </div>
       </div>
       <div className="footer-bottom">

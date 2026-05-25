@@ -10,7 +10,6 @@ const services = [
     title: 'Maintenance Matérielle',
     desc: 'Diagnostic complet, réparation et remplacement de tout composant informatique défaillant.',
     features: ['Diagnostic matériel complet', 'Remplacement composants', 'Nettoyage & optimisation', 'Upgrade & évolution PC', 'Récupération de données'],
-    price: 'Dès 19 000 FCFA',
   },
   {
     id: 'software',
@@ -20,7 +19,6 @@ const services = [
     title: 'Support Logiciel',
     desc: 'Installation, configuration et résolution de tous vos problèmes logiciels et système.',
     features: ["Installation d'OS (Windows/Linux)", 'Configuration logiciels métier', 'Suppression virus & malwares', 'Optimisation performances', 'Sauvegarde & restauration'],
-    price: 'Dès 16 000 FCFA',
   },
   {
     id: 'network',
@@ -30,7 +28,6 @@ const services = [
     title: 'Réseaux & Infrastructure',
     desc: 'Mise en place, configuration et sécurisation de vos réseaux informatiques.',
     features: ['Installation réseau LAN/Wi-Fi', 'Configuration routeurs/switches', 'Mise en place VPN', 'Firewall & sécurité réseau', 'Supervision & monitoring'],
-    price: 'Dès 33 000 FCFA',
   },
   {
     id: 'security',
@@ -40,7 +37,6 @@ const services = [
     title: 'Cybersécurité',
     desc: 'Protection complète de vos systèmes contre les menaces et cyberattaques.',
     features: ['Audit de sécurité', 'Antivirus professionnel', 'Chiffrement des données', 'Formation utilisateurs', 'Plan de continuité'],
-    price: 'Dès 55 000 FCFA',
   },
   {
     id: 'cloud',
@@ -50,7 +46,6 @@ const services = [
     title: 'Solutions Cloud',
     desc: 'Migration, configuration et gestion de vos services cloud et hébergement.',
     features: ['Migration vers le cloud', 'Configuration Microsoft 365', 'Sauvegarde cloud automatique', 'Gestion serveurs distants', 'Synchronisation données'],
-    price: 'Dès 42 000 FCFA',
   },
   {
     id: 'support',
@@ -60,7 +55,6 @@ const services = [
     title: 'Support & Assistance',
     desc: 'Assistance technique en temps réel, à distance ou sur site selon vos besoins.',
     features: ['Télémaintenance 24h/7j', 'Intervention sur site rapide', 'Contrat de maintenance', 'Helpdesk dédié', 'Rapports mensuels'],
-    price: 'Dès 29 000 FCFA/mois',
   },
 ]
 
@@ -101,7 +95,6 @@ export default function Services() {
             >
               <div className="svc-top">
                 <span className={`badge badge-${s.color === 'purple' ? 'secondary' : s.color}`}>{s.category}</span>
-                <span className="svc-price">{s.price}</span>
               </div>
               <div className={`svc-icon icon-${s.color}`}>{s.icon}</div>
               <h3 className="svc-title">{s.title}</h3>

@@ -1,20 +1,6 @@
 import { useEffect, useRef } from 'react'
 import './Contact.css'
-
-const contactItems = [
-  {
-    title: 'Assistance 24h/7j',
-    desc: 'Une équipe prête à intervenir rapidement pour vos incidents et urgences IT.',
-  },
-  {
-    title: 'Support technique pro',
-    desc: 'Maintenance, audits et support sur site ou à distance, selon vos besoins.',
-  },
-  {
-    title: 'Réponse claire',
-    desc: 'Des réponses concrètes et un suivi personnalisé pour chaque demande.',
-  },
-]
+import { contactDetails, contactHighlights } from '../data/contactData'
 
 export default function Contact() {
   const sectionRef = useRef(null)
@@ -41,12 +27,29 @@ export default function Contact() {
             </h2>
             <p className="section-desc">
               SAHTECH est disponible pour tous vos besoins informatiques, de la maintenance aux interventions urgentes.
-              Retrouvez nos coordonnées complètes et notre localisation dans le footer.
+              Retrouvez nos coordonnées complètes et notre localisation ici.
             </p>
+
+            <div className="contact-details">
+              <div className="contact-meta glass-card">
+                <h4>Coordonnées</h4>
+                <a href={`tel:${contactDetails.phoneHref}`}>{contactDetails.phone}</a>
+                <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
+              </div>
+              <div className="contact-meta glass-card">
+                <h4>Adresse & horaires</h4>
+                {contactDetails.address.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+                {contactDetails.hours.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="contact-cards reveal reveal-delay-2">
-            {contactItems.map((item) => (
+            {contactHighlights.map((item) => (
               <div key={item.title} className="contact-card glass-card">
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
