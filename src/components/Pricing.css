@@ -114,16 +114,30 @@
 
 .plan-price {
   display: flex;
-  align-items: baseline;
-  gap: 4px;
+  flex-direction: column;
+  gap: 0.35rem;
   margin-top: var(--space-sm);
 }
 
-.price-currency {
+.price-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.price-start,
+.price-end {
   font-family: var(--font-display);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--clr-text-muted);
+}
+
+.price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
 .price-num {

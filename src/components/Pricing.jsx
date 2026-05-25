@@ -124,10 +124,14 @@ export default function Pricing() {
                 <p className="plan-name">{plan.name}</p>
                 <p className="plan-desc">{plan.desc}</p>
                 <div className="plan-price">
-                  <span className="price-currency">Dès</span>
-                  <span className="price-num">{getPrice(plan.price)}</span>
-                  <span className="price-currency">FCFA</span>
-                  <span className="price-period">{plan.period}</span>
+                  <div className="price-meta">
+                    <span className="price-start">Dès</span>
+                    <span className="price-end">FCFA</span>
+                  </div>
+                  <div className="price-main">
+                    <span className="price-num">{getPrice(plan.price)}</span>
+                    <span className="price-period">{plan.period}</span>
+                  </div>
                 </div>
               </div>
 
